@@ -11,6 +11,9 @@ namespace Snake
             int y = 1;
             Snake snake = new Snake(1,1,50);
             snake.draw();
+           //Board board = new Board(20,20,0,0);
+            //board.DrawBoard();
+            
             ConsoleKey action = ConsoleKey.F;
 
             while (action != ConsoleKey.Q)

@@ -6,6 +6,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+
             int x = 1;
             int y = 1;
             Snake snake = new Snake(1,1,50);
@@ -57,6 +58,15 @@ namespace Snake
                     if (action == ConsoleKey.UpArrow) snake.slither();
 
                 }
+            }
+
+            static void Apple()
+                {
+                   Random apple = new Random();
+                   int x = apple.Next(0, 20);
+                   int y = apple.Next(0, 20);
+                   Console.SetCursorPosition(x, y);
+                   Console.Write("*");
             }
         }
     }

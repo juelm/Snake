@@ -8,24 +8,26 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "/Users/matthewjuel/.nuget/packages/": {}
+    "C:\\Users\\weiba\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj",
+      "projectUniqueName": "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\Snake.csproj",
       "projectName": "Snake",
-      "projectPath": "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj",
-      "packagesPath": "/Users/matthewjuel/.nuget/packages/",
-      "outputPath": "/Users/matthewjuel/Projects/Snake/Snake/Snake/obj/",
+      "projectPath": "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\Snake.csproj",
+      "packagesPath": "C:\\Users\\weiba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/matthewjuel/.config/NuGet/NuGet.Config"
+        "C:\\Users\\weiba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -56,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

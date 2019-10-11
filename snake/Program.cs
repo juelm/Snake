@@ -10,19 +10,19 @@ namespace Snake
         static int minY = 0;
         static int maxX = 50;
         static int maxY = 50;
-        static int ms = 200;
+        static int ms = 500;
         static int snakeStartY = 20;
         static int snakeStartX = 20;
         static bool isAlive = true;
         static Apple apple = new Apple(minY, minX, maxX, maxY);
         static Snake snake = new Snake(snakeStartX, snakeStartY, ms);
-        //static Timer timer = new System.Timers.Timer(ms);
+        static Timer timer = new System.Timers.Timer(ms);
 
         static void Main(string[] args)
         {
 
-            //timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //timer.Enabled = true;
+            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            timer.Enabled = true;
 
             //Board board = new Board(50, 50, 0, 0);
             //board.DrawBoard();
@@ -76,6 +76,10 @@ namespace Snake
         {
             snake.slither();
             snake.Eat(apple);
+            //Console.SetCursorPosition(2, 10);
+            //Console.Write($"appleX: {apple.X}, appleY: {apple.Y}, snakeX: {snake.PositionX}, snakeY: {snake.PositionY}, ");
+
+
 
         }
     }

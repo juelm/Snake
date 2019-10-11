@@ -12,7 +12,7 @@ namespace Snake
         private int priorY;
         private char icon = '<';
         private Queue<Point> q = new Queue<Point>();
-        private System.Timers.Timer timer;
+        //private System.Timers.Timer timer;
         private int direction = 1;
         private bool grow = false;
 
@@ -51,9 +51,9 @@ namespace Snake
         {
             positionX = x;
             positionY = y;
-            timer = new System.Timers.Timer(ms);
-            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Enabled = true;
+            //timer = new System.Timers.Timer(ms);
+            //timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            //timer.Enabled = true;
             Point temp = new Point(x - 1, y);
             q.Enqueue(temp);
             temp.X = x - 2;
@@ -153,17 +153,18 @@ namespace Snake
 
         public void Eat(Apple apple)
         {
+            //bool biggify = false;
+
             if (apple.X == PositionX && apple.Y == PositionY)
             {
                 grow = true;
                 apple.generate();
-            }
-            
+            }  
         }
 
-        public void OnTimedEvent(Object source, ElapsedEventArgs e)
-        {
-            slither();
-        }
+        //public void OnTimedEvent(Object source, ElapsedEventArgs e)
+        //{
+        //    slither();
+        //}
     }
 }

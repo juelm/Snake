@@ -58,14 +58,14 @@ namespace Snake
 
         }
 
-        public static void Eat(Apple ap, Snake sn)
-        {
-            if (ap.X == sn.PositionX && ap.Y == sn.PositionY)
-            {
-                snake.Grow(true);
-                apple.generate();
-            }
-        }
+        //public static void Eat(Apple ap, Snake sn)
+        //{
+        //    if (ap.X == sn.PositionX && ap.Y == sn.PositionY)
+        //    {
+        //        snake.Grow(true);
+        //        apple.generate();
+        //    }
+        //}
 
         public static void amIDead(Snake snake)
         {
@@ -75,6 +75,8 @@ namespace Snake
         public static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             snake.slither();
+            snake.Eat(apple);
+
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Snake
 {
-    class Apple
+    public class Apple
     {
         int x;
         int y;

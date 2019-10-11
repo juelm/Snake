@@ -54,6 +54,16 @@ namespace Snake
             timer = new System.Timers.Timer(ms);
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Enabled = true;
+            Point temp = new Point(x - 1, y);
+            q.Enqueue(temp);
+            temp.X = x - 2;
+            q.Enqueue(temp);
+            temp.X = x - 3;
+            q.Enqueue(temp);
+            temp.X = x - 4;
+            q.Enqueue(temp);
+            temp.X = x - 5;
+            q.Enqueue(temp);
         }
 
         public void changeDirection(ConsoleKey direction)
@@ -62,23 +72,15 @@ namespace Snake
             {
                 case ConsoleKey.UpArrow:
                     this.direction = 0;
-                    if (icon == '>' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C4') icon = '\u02C5';
-                    else if (icon == '>' || icon == '<' || icon == '-' || icon == '\u02C5' || icon == '\u02C4') icon = '\u0C79';
                     break;
                 case ConsoleKey.DownArrow:
                     this.direction = 2;
-                    if (icon == '>' || icon =='<' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '\u02C4';
-                    else if (icon == '>' || icon == '<' || icon == '-' || icon == '\u02C5' || icon == '\u02C4') icon = '\u0C79';
                     break;
                 case ConsoleKey.LeftArrow:
                     this.direction = 3;
-                    if (icon == '\u02C4' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '>';
-                    else if (icon == '>' || icon == '<' || icon == '\u0C79' || icon == '\u02C5' || icon == '\u02C4') icon = '-';
                     break;
                 case ConsoleKey.RightArrow:
                     this.direction = 1;
-                    if (icon == '>' || icon == '\u02C4' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '<';
-                    else if (icon == '>' || icon == '<' || icon == '\u0C79' || icon == '\u02C5' || icon == '\u02C4') icon = '-';
                     break;
             }
         }
@@ -87,21 +89,33 @@ namespace Snake
         {
             if(direction == 0)
             {
+                if (icon == '>' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C4') icon = '\u02C5';
+                else if (icon == '>' || icon == '<' || icon == '-' || icon == '\u02C5' || icon == '\u02C4') icon = '\u0C79';
+
                 positionY -= 1;
             }
 
             if (direction == 1)
             {
+                if (icon == '>' || icon == '\u02C4' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '<';
+                else if (icon == '>' || icon == '<' || icon == '\u0C79' || icon == '\u02C5' || icon == '\u02C4') icon = '-';
+
                 positionX += 1;
             }
 
             if (direction == 2)
             {
+                if (icon == '>' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '\u02C4';
+                else if (icon == '>' || icon == '<' || icon == '-' || icon == '\u02C5' || icon == '\u02C4') icon = '\u0C79';
+
                 positionY += 1;
             }
 
             if (direction == 3)
             {
+                if (icon == '\u02C4' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '>';
+                else if (icon == '>' || icon == '<' || icon == '\u0C79' || icon == '\u02C5' || icon == '\u02C4') icon = '-';
+
                 positionX -= 1;
             }
 
@@ -113,29 +127,38 @@ namespace Snake
 
         public void draw()
         {
-            Console.SetCursorPosition(positionX, positionY);
-            Console.Write(icon);
 
-            if(q.Count > 1 && grow == false)
+
+            if (q.Count > 1 && grow == false)
             {
                 Point tail = q.Dequeue();
                 Console.SetCursorPosition(tail.X, tail.Y);
                 Console.Write(" ");
             }
 
-            if (q.Count > 1)
+            if (q.Count >= 1)
             {
                 foreach (Point pt in q)
                 {
                     Console.SetCursorPosition(pt.X, pt.Y);
                     Console.Write('*');
                 }
+
+                Console.SetCursorPosition(positionX, positionY);
+                Console.Write(icon);
             }
+
+            grow = false;
         }
 
-        public void Grow(bool biggify)
+        public void Eat(Apple apple)
         {
-            this.grow = biggify;
+            if (apple.X == PositionX && apple.Y == PositionY)
+            {
+                grow = true;
+                apple.generate();
+            }
+            
         }
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)

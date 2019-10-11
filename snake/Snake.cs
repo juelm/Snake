@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Timers;
+using System.Drawing;
+using System.Collections.Generic;
+
 namespace Snake
 {
     public class Snake
@@ -8,7 +11,11 @@ namespace Snake
         private int positionY;
         private int priorY;
         private char icon = '<';
+        private Queue<Point> q = new Queue<Point>();
         private System.Timers.Timer timer;
+        private int direction = 1;
+        private bool grow = false;
+
 
         public int PositionY
         {
@@ -25,6 +32,21 @@ namespace Snake
 
         }
 
+        public int PositionX
+        {
+
+            get
+            {
+                return positionX;
+            }
+
+            set
+            {
+                positionX = value;
+            }
+
+        }
+
         public Snake(int x, int y, int ms)
         {
             positionX = x;
@@ -34,18 +56,57 @@ namespace Snake
             timer.Enabled = true;
         }
 
-        public void flap()
+        public void changeDirection(ConsoleKey direction)
         {
-            priorY = PositionY;
-
-            PositionY -= 3;
-
+            switch (direction)
+            {
+                case ConsoleKey.UpArrow:
+                    this.direction = 0;
+                    if (icon == '>' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C4') icon = '\u02C5';
+                    else if (icon == '>' || icon == '<' || icon == '-' || icon == '\u02C5' || icon == '\u02C4') icon = '\u0C79';
+                    break;
+                case ConsoleKey.DownArrow:
+                    this.direction = 2;
+                    if (icon == '>' || icon =='<' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '\u02C4';
+                    else if (icon == '>' || icon == '<' || icon == '-' || icon == '\u02C5' || icon == '\u02C4') icon = '\u0C79';
+                    break;
+                case ConsoleKey.LeftArrow:
+                    this.direction = 3;
+                    if (icon == '\u02C4' || icon == '<' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '>';
+                    else if (icon == '>' || icon == '<' || icon == '\u0C79' || icon == '\u02C5' || icon == '\u02C4') icon = '-';
+                    break;
+                case ConsoleKey.RightArrow:
+                    this.direction = 1;
+                    if (icon == '>' || icon == '\u02C4' || icon == '-' || icon == '\u0C79' || icon == '\u02C5') icon = '<';
+                    else if (icon == '>' || icon == '<' || icon == '\u0C79' || icon == '\u02C5' || icon == '\u02C4') icon = '-';
+                    break;
+            }
         }
 
         public void slither()
         {
-            priorY = positionY;
-            PositionY += 1;
+            if(direction == 0)
+            {
+                positionY -= 1;
+            }
+
+            if (direction == 1)
+            {
+                positionX += 1;
+            }
+
+            if (direction == 2)
+            {
+                positionY += 1;
+            }
+
+            if (direction == 3)
+            {
+                positionX -= 1;
+            }
+
+            Point position = new Point(positionX, positionY);
+            q.Enqueue(position);
 
             draw();
         }
@@ -55,8 +116,26 @@ namespace Snake
             Console.SetCursorPosition(positionX, positionY);
             Console.Write(icon);
 
-            Console.SetCursorPosition(positionX, priorY);
-            Console.Write(" ");
+            if(q.Count > 1 && grow == false)
+            {
+                Point tail = q.Dequeue();
+                Console.SetCursorPosition(tail.X, tail.Y);
+                Console.Write(" ");
+            }
+
+            if (q.Count > 1)
+            {
+                foreach (Point pt in q)
+                {
+                    Console.SetCursorPosition(pt.X, pt.Y);
+                    Console.Write('*');
+                }
+            }
+        }
+
+        public void Grow(bool biggify)
+        {
+            this.grow = biggify;
         }
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)

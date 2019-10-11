@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\Snake.csproj": {}
+    "C:\\Users\\Student\\Desktop\\snake\\Snake\\Snake\\Snake.csproj": {}
   },
   "projects": {
-    "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\Snake.csproj": {
+    "C:\\Users\\Student\\Desktop\\snake\\Snake\\Snake\\Snake.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\Snake.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Desktop\\snake\\Snake\\Snake\\Snake.csproj",
         "projectName": "Snake",
-        "projectPath": "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\Snake.csproj",
-        "packagesPath": "C:\\Users\\weiba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\weiba\\Desktop\\Snake\\Snake\\obj\\",
+        "projectPath": "C:\\Users\\Student\\Desktop\\snake\\Snake\\Snake\\Snake.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\Desktop\\snake\\Snake\\Snake\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\weiba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

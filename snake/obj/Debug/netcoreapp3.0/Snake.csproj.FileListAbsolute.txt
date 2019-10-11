@@ -9,3 +9,14 @@
 /Users/matthewjuel/Projects/Snake/Snake/snake/obj/Debug/netcoreapp3.0/Snake.AssemblyInfo.cs
 /Users/matthewjuel/Projects/Snake/Snake/snake/obj/Debug/netcoreapp3.0/Snake.dll
 /Users/matthewjuel/Projects/Snake/Snake/snake/obj/Debug/netcoreapp3.0/Snake.pdb
+C:\Users\Student\Desktop\snake\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.csprojAssemblyReference.cache
+C:\Users\Student\Desktop\snake\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.AssemblyInfoInputs.cache
+C:\Users\Student\Desktop\snake\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.AssemblyInfo.cs
+C:\Users\Student\Desktop\snake\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.dll
+C:\Users\Student\Desktop\snake\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.pdb
+C:\Users\Student\Desktop\snake\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.exe
+C:\Users\Student\Desktop\snake\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.deps.json
+C:\Users\Student\Desktop\snake\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.runtimeconfig.json
+C:\Users\Student\Desktop\snake\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.runtimeconfig.dev.json
+C:\Users\Student\Desktop\snake\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.dll
+C:\Users\Student\Desktop\snake\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.pdb

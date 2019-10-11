@@ -11,10 +11,11 @@ namespace Snake
             //int y = 1;
             //Snake snake = new Snake(1,1,50);
             //snake.draw();
+            int Level = 20; 
             Console.CursorVisible = false;
-            Board board = new Board(20);
+            Board board = new Board(Level);
             board.drawBoard();
-            Apple apple = new Apple(20);
+            Apple apple = new Apple(Level);
             apple.generateApple();
 
             Console.ReadKey();

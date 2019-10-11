@@ -7,16 +7,22 @@ namespace Snake
         static void Main(string[] args)
         {
 
-            int x = 1;
-            int y = 1;
-            Snake snake = new Snake(1,1,50);
-            snake.draw();
-           //Board board = new Board(20,20,0,0);
-            //board.DrawBoard();
-            
-            ConsoleKey action = ConsoleKey.F;
+            //int x = 1;
+            //int y = 1;
+            //Snake snake = new Snake(1,1,50);
+            //snake.draw();
+            Console.CursorVisible = false;
+            Board board = new Board(20);
+            board.drawBoard();
+            Apple apple = new Apple(20);
+            apple.generateApple();
 
-            while (action != ConsoleKey.Q)
+            Console.ReadKey();
+
+
+            //ConsoleKey action = ConsoleKey.F;
+
+            /*while (action != ConsoleKey.Q)
             {
                 //quit = Console.ReadKey().Key;
                 //int oldX = x;
@@ -61,16 +67,9 @@ namespace Snake
                     if (action == ConsoleKey.UpArrow) snake.slither();
 
                 }
-            }
+            } */
 
-            static void Apple()
-                {
-                   Random apple = new Random();
-                   int x = apple.Next(0, 20);
-                   int y = apple.Next(0, 20);
-                   Console.SetCursorPosition(x, y);
-                   Console.Write("*");
-            }
+
         }
     }
 }

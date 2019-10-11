@@ -16,14 +16,13 @@ namespace Snake
         static bool isAlive = true;
         static Apple apple = new Apple(minY, minX, maxX, maxY);
         static Snake snake = new Snake(snakeStartX, snakeStartY, ms);
-        static Timer timer = new System.Timers.Timer(ms);
+        //static Timer timer = new System.Timers.Timer(ms);
 
         static void Main(string[] args)
         {
 
-
-            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Enabled = true;
+            //timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            //timer.Enabled = true;
 
             //Board board = new Board(50, 50, 0, 0);
             //board.DrawBoard();

@@ -48,7 +48,6 @@ namespace Snake
             this.maxY = maxY;
             this.rand = new Random();
 
-
         }
 
         public void generate()

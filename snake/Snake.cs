@@ -8,11 +8,9 @@ namespace Snake
     public class Snake
     {
         private int positionX;
-        private int positionY;
-        private int priorY;
+        private int positionY;        
         private char icon = '<';
         private Queue<Point> q = new Queue<Point>();
-        //private System.Timers.Timer timer;
         private int direction = 1;
         private bool grow = false;
 
@@ -47,23 +45,11 @@ namespace Snake
 
         }
 
-        public Snake(int x, int y, int ms)
+        public Snake(int x, int y)
         {
             positionX = x;
             positionY = y;
-            //timer = new System.Timers.Timer(ms);
-            //timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //timer.Enabled = true;
-            Point temp = new Point(x - 1, y);
-            q.Enqueue(temp);
-            temp.X = x - 2;
-            q.Enqueue(temp);
-            temp.X = x - 3;
-            q.Enqueue(temp);
-            temp.X = x - 4;
-            q.Enqueue(temp);
-            temp.X = x - 5;
-            q.Enqueue(temp);
+
         }
 
         public void changeDirection(ConsoleKey direction)
@@ -153,7 +139,6 @@ namespace Snake
 
         public void Eat(Apple apple)
         {
-            //bool biggify = false;
 
             if (apple.X == PositionX && apple.Y == PositionY)
             {
@@ -162,9 +147,5 @@ namespace Snake
             }  
         }
 
-        //public void OnTimedEvent(Object source, ElapsedEventArgs e)
-        //{
-        //    slither();
-        //}
     }
 }

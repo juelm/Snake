@@ -1,14 +1,17 @@
 ﻿<Properties StartupConfiguration="{69E59B32-AC27-441B-93F1-69B727F0BC9E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="snake/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="snake/Snake.cs">
     <Files>
+      <File FileName="Snake/Board.cs" Line="1" Column="1" />
+      <File FileName="Snake/Game.cs" Line="1" Column="1" />
       <File FileName="Snake/Program.cs" Line="1" Column="1" />
+      <File FileName="Snake/Snake.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Snake" expanded="True">
             <Node name="Snake" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Snake.cs" selected="True" />
             </Node>
           </Node>
         </State>

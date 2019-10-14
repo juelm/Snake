@@ -7,11 +7,11 @@ namespace Snake
 {
     public class Snake
     {
-        private int positionX;
-        private int positionY;        
+        protected int positionX;
+        protected int positionY;        
         private char icon = '<';
         private Queue<Point> q = new Queue<Point>();
-        private int direction = 1;
+        protected int direction = 1;
         private bool grow = false;
 
 
@@ -52,7 +52,7 @@ namespace Snake
 
         }
 
-        public void changeDirection(ConsoleKey direction)
+        public virtual void changeDirection(ConsoleKey direction)
         {
             switch (direction)
             {

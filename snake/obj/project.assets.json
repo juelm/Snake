@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj",
+      "projectUniqueName": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
       "projectName": "Snake",
-      "projectPath": "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj",
+      "projectPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
       "packagesPath": "/Users/matthewjuel/.nuget/packages/",
-      "outputPath": "/Users/matthewjuel/Projects/Snake/Snake/Snake/obj/",
+      "outputPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/matthewjuel/.config/NuGet/NuGet.Config"

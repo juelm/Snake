@@ -20,3 +20,14 @@ C:/Users/weiba/Desktop/Snake/Snake/obj/Debug/netcoreapp3.0/Snake.AssemblyInfoInp
 C:/Users/weiba/Desktop/Snake/Snake/obj/Debug/netcoreapp3.0/Snake.AssemblyInfo.cs
 C:/Users/weiba/Desktop/Snake/Snake/obj/Debug/netcoreapp3.0/Snake.dll
 C:/Users/weiba/Desktop/Snake/Snake/obj/Debug/netcoreapp3.0/Snake.pdb
+/Users/matthewjuel/Downloads/Snake-master 2/snake/bin/Debug/netcoreapp3.0/Snake
+/Users/matthewjuel/Downloads/Snake-master 2/Snake/bin/Debug/netcoreapp3.0/Snake.deps.json
+/Users/matthewjuel/Downloads/Snake-master 2/Snake/bin/Debug/netcoreapp3.0/Snake.runtimeconfig.json
+/Users/matthewjuel/Downloads/Snake-master 2/Snake/bin/Debug/netcoreapp3.0/Snake.runtimeconfig.dev.json
+/Users/matthewjuel/Downloads/Snake-master 2/snake/bin/Debug/netcoreapp3.0/Snake.dll
+/Users/matthewjuel/Downloads/Snake-master 2/snake/bin/Debug/netcoreapp3.0/Snake.pdb
+/Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.csprojAssemblyReference.cache
+/Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.AssemblyInfoInputs.cache
+/Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.AssemblyInfo.cs
+/Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.dll
+/Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.pdb

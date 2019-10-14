@@ -14,11 +14,20 @@ namespace Snake
         {
             ConsoleKey play = ConsoleKey.N;
 
-            while(play != ConsoleKey.Q)
+            Console.WriteLine("Do you want to play traditional snake?");
+            Console.WriteLine("Or against the computer");
+
+            Console.WriteLine("\nEnter c to play computer or any other key to play the traditional snake game.");
+
+            ConsoleKey type = Console.ReadKey().Key;
+
+            while (play != ConsoleKey.Q)
             {
                 Console.Clear();
                 Game game = new Game(height, ms, snakeStartX, snakeStartY);
-                game.playGame();
+
+                if (type == ConsoleKey.C) game.playAgainstComputer();
+                else game.playGame();
 
                 Console.WriteLine("\n\n   Any key to play again. q to quit");
                 play = Console.ReadKey().Key;

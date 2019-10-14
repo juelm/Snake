@@ -71,7 +71,7 @@ namespace Snake
             }
         }
 
-        public void slither()
+        public bool slither()
         {
             if(direction == 0)
             {
@@ -105,10 +105,14 @@ namespace Snake
                 positionX -= 1;
             }
 
+            bool isSnakeDead = isDead();
+
             Point position = new Point(positionX, positionY);
             q.Enqueue(position);
 
             draw();
+
+            return isSnakeDead;
         }
 
         public void draw()
@@ -145,6 +149,25 @@ namespace Snake
                 grow = true;
                 apple.generate();
             }  
+        }
+
+        public bool isDead()
+        {
+            bool amIDead = false;
+
+            if (q.Count >= 1)
+            {
+                foreach (Point p in q)
+                {
+                    if (p.X == PositionX & p.Y == PositionY)
+                    {
+                        amIDead = true;
+                    }
+                    
+                }
+            }
+
+            return amIDead;
         }
 
     }

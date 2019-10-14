@@ -8,6 +8,9 @@ namespace Snake
     class Board
     {
         int n;
+
+        public int N { set; get; }
+
         public Board(int size)
         {
             this.n = size;

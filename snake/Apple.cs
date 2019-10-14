@@ -19,7 +19,7 @@ namespace Snake
         {
             Random apple = new Random();
             X = apple.Next(1, 2 * n - 1);
-            Y = apple.Next(1, n);
+            Y = apple.Next(1, n - 1);
             Console.SetCursorPosition(X, Y);
             Console.Write("@");
         }

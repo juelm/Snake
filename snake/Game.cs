@@ -13,6 +13,7 @@ namespace Snake
         Timer timer;
         Snake snake;
 
+
         public Game(int level,int timerms, int snakeStartX, int snakeStartY)
         {
             this.apple = new Apple(level);
@@ -46,7 +47,14 @@ namespace Snake
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            snake.slither();
+            bool isDead = snake.slither();
+            if (isDead || snake.PositionX <= 0 || snake.PositionX >= board.N * 2 || snake.PositionY <= 0 || snake.PositionY >= board.N)
+            {
+                timer.Stop();
+                Console.SetCursorPosition(board.N / 2, board.N / 2);
+                Console.Write(isDead);
+                //Console.Write("****Game Over****");
+            }
             snake.Eat(apple);
         }
 

@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{69E59B32-AC27-441B-93F1-69B727F0BC9E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="snake/Snake.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="snake/Board.cs">
     <Files>
-      <File FileName="Snake/Board.cs" Line="1" Column="1" />
-      <File FileName="Snake/Game.cs" Line="1" Column="1" />
-      <File FileName="Snake/Program.cs" Line="1" Column="1" />
-      <File FileName="Snake/Snake.cs" Line="1" Column="1" />
+      <File FileName="Snake/Board.cs" Line="11" Column="35" />
+      <File FileName="Snake/Program.cs" />
+      <File FileName="Snake/Snake.cs" />
+      <File FileName="Snake/Game.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

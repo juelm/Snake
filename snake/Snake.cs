@@ -71,7 +71,8 @@ namespace Snake
             }
         }
 
-        public void slither()
+
+        public bool slither()
         {
             if(direction == 0)
             {
@@ -108,12 +109,14 @@ namespace Snake
             Point position = new Point(positionX, positionY);
             q.Enqueue(position);
 
-            draw();
+            bool amIDead = draw();
+            return amIDead;
         }
 
-        public void draw()
+        public bool draw()
         {
 
+            bool isDead = false;
 
             if (q.Count > 1 && grow == false)
             {
@@ -122,19 +125,21 @@ namespace Snake
                 Console.Write(" ");
             }
 
+            Console.SetCursorPosition(positionX, positionY);
+            Console.Write(icon);
+
             if (q.Count >= 1)
             {
                 foreach (Point pt in q)
                 {
                     Console.SetCursorPosition(pt.X, pt.Y);
                     Console.Write('*');
+                    if (pt.X == PositionX && pt.Y == PositionY) isDead = true;
                 }
-
-                Console.SetCursorPosition(positionX, positionY);
-                Console.Write(icon);
             }
 
             grow = false;
+            return isDead;
         }
 
         public void Eat(Apple apple)

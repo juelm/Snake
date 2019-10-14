@@ -12,8 +12,17 @@ namespace Snake
         static int snakeStartY = 5;
         static void Main(string[] args)
         {
-            Game game = new Game(height, ms, snakeStartX, snakeStartY);
-            game.playGame();
+            ConsoleKey play = ConsoleKey.N;
+
+            while(play != ConsoleKey.Q)
+            {
+                Console.Clear();
+                Game game = new Game(height, ms, snakeStartX, snakeStartY);
+                game.playGame();
+
+                Console.WriteLine("\n\n   Any key to play again. q to quit");
+                play = Console.ReadKey().Key;
+            }
         }  
     }
 }

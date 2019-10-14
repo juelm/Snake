@@ -22,6 +22,7 @@ namespace Snake
             this.snake = new Snake(snakeStartX, snakeStartY);
             this.timer = new Timer(timerms);
             yDimension = level;
+            
 
         }
 
@@ -35,12 +36,12 @@ namespace Snake
             Console.CursorVisible = false;
         
             apple.generate();
-       
-            ConsoleKey action = ConsoleKey.F;
+
+            ConsoleKey action = ConsoleKey.UpArrow;
             snake.draw();
 
 
-            while (action != ConsoleKey.Q)
+            while (action == ConsoleKey.UpArrow || action == ConsoleKey.DownArrow || action == ConsoleKey.LeftArrow || action == ConsoleKey.RightArrow)
             {
                 action = Console.ReadKey().Key;
                 snake.changeDirection(action);
@@ -63,6 +64,9 @@ namespace Snake
                 timer.Stop();
                 Console.SetCursorPosition(yDimension / 2, yDimension / 2);
                 Console.Write("****Game Over****");
+                Console.SetCursorPosition(yDimension / 2, yDimension / 2 + 1);
+                Console.Write("Enter to continue");
+
             }
         }
 

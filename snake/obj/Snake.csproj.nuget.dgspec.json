@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj": {}
+    "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj": {}
   },
   "projects": {
-    "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj": {
+    "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
+        "projectUniqueName": "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj",
         "projectName": "Snake",
-        "projectPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
+        "projectPath": "/Users/matthewjuel/Projects/Snake/Snake/Snake/Snake.csproj",
         "packagesPath": "/Users/matthewjuel/.nuget/packages/",
-        "outputPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/obj/",
+        "outputPath": "/Users/matthewjuel/Projects/Snake/Snake/Snake/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/matthewjuel/.config/NuGet/NuGet.Config"

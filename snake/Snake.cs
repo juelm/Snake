@@ -130,8 +130,11 @@ namespace Snake
             {
                 foreach (Point pt in q)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
+
                     Console.SetCursorPosition(pt.X, pt.Y);
                     Console.Write('*');
+                    Console.ResetColor();
                 }
 
                 Console.SetCursorPosition(positionX, positionY);

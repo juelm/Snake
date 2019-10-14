@@ -21,7 +21,12 @@ namespace Snake
             X = apple.Next(1, 2 * n - 1);
             Y = apple.Next(1, n - 1);
             Console.SetCursorPosition(X, Y);
+            Console.ForegroundColor = ConsoleColor.Red;
+
             Console.Write("@");
+            Console.ResetColor();
+
+
         }
     }
 }

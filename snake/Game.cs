@@ -13,6 +13,7 @@ namespace Snake
         Board board;
         Timer timer;
         Snake snake;
+        ComputerSnake cSnake;
         int yDimension;
 
         public Game(int level,int timerms, int snakeStartX, int snakeStartY)
@@ -49,17 +50,52 @@ namespace Snake
             }
         }
 
+        public void playAgainstComputer()
+        {
+            cSnake = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
+            timer.Enabled = true;
+
+
+            board.drawBoard();
+            Console.CursorVisible = false;
+
+            apple.generate();
+
+            ConsoleKey action = ConsoleKey.UpArrow;
+            snake.draw();
+
+
+            while (action == ConsoleKey.UpArrow || action == ConsoleKey.DownArrow || action == ConsoleKey.LeftArrow || action == ConsoleKey.RightArrow)
+            {
+                action = Console.ReadKey().Key;
+                snake.changeDirection(action);
+
+            }
+        }
+
         public void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             bool isSnakeDead = snake.slither();
             snake.Eat(apple);
-            amIDead(isSnakeDead);
+            amIDead(isSnakeDead, snake);
         }
 
-        public void amIDead(bool isDead)
+        public void OnTimedEvent2(Object source, ElapsedEventArgs e)
+        {
+            cSnake.changeDirection(apple);
+            bool isComputerSnakeDead = cSnake.slither();
+            bool isSnakeDead = snake.slither();
+            snake.Eat(apple);
+            cSnake.Eat(apple);
+            amIDead(isSnakeDead, snake);
+            amIDead(isComputerSnakeDead, cSnake);
+        }
+
+        public void amIDead(bool isDead, Snake sn)
         {
 
-            if(isDead || snake.PositionX <= 0 || snake.PositionX >= yDimension * 2 -1 || snake.PositionY <= 0 || snake.PositionY >= yDimension - 1)
+            if(isDead || sn.PositionX <= 0 || sn.PositionX >= yDimension * 2 -1 || sn.PositionY <= 0 || sn.PositionY >= yDimension - 1)
             {
                 timer.Stop();
                 Console.SetCursorPosition(yDimension / 2, yDimension / 2);

@@ -10,20 +10,36 @@ namespace Snake
     class Game
     {
         Apple apple;
+        Apple apple1;
+        Apple apple2;
+
+
         Board board;
         Timer timer;
         Snake snake;
         ComputerSnake cSnake;
-        int yDimension;
+        ComputerSnake cSnake1;
+        ComputerSnake cSnake2;
 
-        public Game(int level,int timerms, int snakeStartX, int snakeStartY)
+        int dimension;
+
+
+
+
+
+        public Game(int level, int timerms, int snakeStartX, int snakeStartY)
         {
-            this.apple = new Apple(level);
+            apple = new Apple(level);
+            //apple1 = new Apple(level);
+           // apple2 = new Apple(level);
+
+
+
             this.board = new Board(level);
             this.snake = new Snake(snakeStartX, snakeStartY);
             this.timer = new Timer(timerms);
-            yDimension = level;
-            
+            dimension = level;
+
 
         }
 
@@ -32,35 +48,46 @@ namespace Snake
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Enabled = true;
 
-            
+
             board.drawBoard();
             Console.CursorVisible = false;
-        
-            apple.generate();
+
+
+
 
             ConsoleKey action = ConsoleKey.UpArrow;
-            snake.draw();
+            // snake.draw();
 
 
             while (action == ConsoleKey.UpArrow || action == ConsoleKey.DownArrow || action == ConsoleKey.LeftArrow || action == ConsoleKey.RightArrow)
             {
                 action = Console.ReadKey().Key;
                 snake.changeDirection(action);
-         
+
             }
         }
 
         public void playAgainstComputer()
         {
+            Console.CursorVisible = false;
+
             cSnake = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+            cSnake1 = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+            cSnake2 = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
             timer.Enabled = true;
 
-
+            cSnake.size = dimension;
+            cSnake1.size = dimension;
+            cSnake2.size = dimension;
+            //Console.Clear();
             board.drawBoard();
             Console.CursorVisible = false;
 
             apple.generate();
+            //apple1.generate();
+            //apple2.generate();
 
             ConsoleKey action = ConsoleKey.UpArrow;
             snake.draw();
@@ -78,33 +105,107 @@ namespace Snake
         {
             bool isSnakeDead = snake.slither();
             snake.Eat(apple);
-            amIDead(isSnakeDead, snake);
+            //amIDead(isSnakeDead, snake);
         }
-
+        int count1 = 0;
+        int count = 0;
         public void OnTimedEvent2(Object source, ElapsedEventArgs e)
         {
-            cSnake.changeDirection(apple);
-            bool isComputerSnakeDead = cSnake.slither();
-            bool isSnakeDead = snake.slither();
-            snake.Eat(apple);
-            cSnake.Eat(apple);
-            amIDead(isSnakeDead, snake);
-            amIDead(isComputerSnakeDead, cSnake);
-        }
 
-        public void amIDead(bool isDead, Snake sn)
-        {
-
-            if(isDead || sn.PositionX <= 0 || sn.PositionX >= yDimension * 2 -1 || sn.PositionY <= 0 || sn.PositionY >= yDimension - 1)
+            Console.CursorVisible = false;
+            lock (cSnake.eLock)
             {
-                timer.Stop();
-                Console.SetCursorPosition(yDimension / 2, yDimension / 2);
-                Console.Write("****Game Over****");
-                Console.SetCursorPosition(yDimension / 2, yDimension / 2 + 1);
-                Console.Write("Enter to continue");
+                if (!cSnake.killSnake)
+                {
 
+
+                    cSnake.BFS(cSnake.maps(dimension), cSnake.Convert(apple.X, apple.Y), cSnake.Convert(cSnake.PositionX, cSnake.PositionY), (dimension * dimension) + 1);
+
+                    cSnake.changeDirection(apple);
+                    cSnake.slither();
+                    cSnake.Eat(apple);
+                }
+
+
+                else
+                {
+                    cSnake.snakeDisapear();
+
+                    cSnake = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+
+                    cSnake.size = dimension;
+                }
             }
-        }
+            lock (cSnake2.eLock)
 
+            {
+
+                if (!cSnake2.killSnake)
+                {
+                    cSnake2.bestFirstSeach(cSnake2.maps(dimension), cSnake2.Convert(apple.X, apple.Y), cSnake2.Convert(cSnake2.PositionX, cSnake2.PositionY), (dimension * dimension) + 1);
+
+
+
+                    cSnake2.changeDirection(apple);
+                    cSnake2.slither();
+
+
+                    cSnake2.Eat(apple);
+                }
+
+                else
+                {
+                    cSnake2.snakeDisapear();
+                    // count1 = 0;
+
+                    cSnake2 = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+                    cSnake2.size = dimension;
+                    //cSnake.killSnake = false;
+
+                }
+            }
+
+            lock (cSnake1.eLock)
+            {
+                if (cSnake1.killSnake)
+                {
+
+
+                    cSnake1.BFS(cSnake1.maps(dimension), cSnake1.Convert(apple.X, apple.Y), cSnake1.Convert(cSnake1.PositionX, cSnake1.PositionY), (dimension * dimension) + 1);
+
+
+
+                    cSnake1.changeDirection(apple);
+                    cSnake1.slither();
+
+
+                    cSnake1.Eat(apple);
+                }
+
+                else
+                {
+                    cSnake1.snakeDisapear();
+                    // count1 = 0;
+
+                    cSnake1 = new ComputerSnake(snake.PositionX + 5, snake.PositionY + 5);
+                    cSnake1.size = dimension;
+                    //cSnake.killSnake = false;
+
+                }
+            }
+
+            //cSnake.BFS(cSnake.maps(dimension), cSnake.Convert(apple.X, apple.Y), cSnake.Convert(cSnake.PositionX, cSnake.PositionY), (dimension * dimension) + 1);
+
+            //bool isSnakeDead = snake.slither();
+            //snake.Eat(apple);
+
+
+            // amIDead(isSnakeDead, snake);
+            //amIDead(isComputerSnakeDead, cSnake);
+        }
     }
 }
+
+
+
+    

@@ -15,11 +15,21 @@ namespace Snake
             this.n = height;
            
         }
+        private static Random _random = new Random();
+        private static ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+        }
+
         public void generate()
         {
             Random apple = new Random();
-            X = apple.Next(1, 2 * n - 1);
+            X = apple.Next(1, n - 1);
             Y = apple.Next(1, n - 1);
+            Console.ForegroundColor = GetRandomConsoleColor();
+            
+
             Console.SetCursorPosition(X, Y);
             Console.Write("@");
         }

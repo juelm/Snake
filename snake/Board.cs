@@ -15,21 +15,31 @@ namespace Snake
         {
             this.n = size;
         }
+        private static Random _random = new Random();
+        private static ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+        }
+
         public void drawBoard()
         {
+
+            Console.ForegroundColor = GetRandomConsoleColor();
+
             // upper 
-            for (int i = 0; i < 2 * n; i++) Console.Write("*");
+            for (int i = 0; i < n; i++) Console.Write("*");
             Console.Write("\n");
             // middle
             for (int i = 0; i < n - 2; i++)
             {
                 Console.Write("*");
-                for (int j = 0; j < 2 * n - 2; j++) Console.Write(" ");
+                for (int j = 0; j <  n - 2; j++) Console.Write(" ");
                 Console.Write("*");
                 Console.Write("\n");
             }
             //lower
-            for (int i = 0; i < 2 * n; i++) Console.Write("*");
+            for (int i = 0; i <  n; i++) Console.Write("*");
             Console.Write("\n");
         }
     }

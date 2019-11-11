@@ -10,10 +10,19 @@ namespace Snake
         protected int positionX;
         protected int positionY;        
         private char icon = '<';
-        private Queue<Point> q = new Queue<Point>();
-        protected int direction = 1;
-        private bool grow = false;
+        public Queue<Point> q = new Queue<Point>();
+        public int direction = 1;
+        public bool grow = false;
+        public bool killSnake = false;
+        ComputerSnake cSnake;
+        private static Random _random = new Random();
+        public object eLock = new object();
 
+        private static ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+        }
 
         public int PositionY
         {
@@ -114,7 +123,19 @@ namespace Snake
 
             return isSnakeDead;
         }
+       
+        public void snakeDisapear()
+        {
+            lock (eLock)
+            {
+                foreach (Point p in q)
+                {
+                    Console.SetCursorPosition(p.X, p.Y);
+                    Console.Write(" ");
+                }
+            }
 
+        }
         public void draw()
         {
 
@@ -122,23 +143,30 @@ namespace Snake
             if (q.Count > 1 && grow == false)
             {
                 Point tail = q.Dequeue();
+
                 Console.SetCursorPosition(tail.X, tail.Y);
+
                 Console.Write(" ");
+
             }
 
-            if (q.Count >= 1)
+            Console.ForegroundColor = GetRandomConsoleColor();
+            lock (eLock)
             {
                 foreach (Point pt in q)
                 {
+
                     Console.SetCursorPosition(pt.X, pt.Y);
                     Console.Write('*');
+
+                    Console.SetCursorPosition(positionX, positionY);
+                    Console.Write(icon);
                 }
+                Console.ResetColor();
 
-                Console.SetCursorPosition(positionX, positionY);
-                Console.Write(icon);
+
+                grow = false;
             }
-
-            grow = false;
         }
 
         public void Eat(Apple apple)
@@ -147,6 +175,7 @@ namespace Snake
             if (apple.X == PositionX && apple.Y == PositionY)
             {
                 grow = true;
+             
                 apple.generate();
             }  
         }

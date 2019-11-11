@@ -1,31 +1,90 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {}
+    ".NETCoreApp,Version=v3.0": {
+      "Lucene.Net/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "SharpZipLib": "0.86.0"
+        },
+        "compile": {
+          "lib/NET40/Lucene.Net.dll": {}
+        },
+        "runtime": {
+          "lib/NET40/Lucene.Net.dll": {}
+        }
+      },
+      "SharpZipLib/0.86.0": {
+        "type": "package",
+        "compile": {
+          "lib/20/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/20/ICSharpCode.SharpZipLib.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Lucene.Net/3.0.3": {
+      "sha512": "A/70q4eDcuuafQeDB9eaiDP9FQG7X29T4VIYRphS7Wk8kAM9gNcfVqYyd0H8BJ1BTpA5C1ORm9RzFn4BiNavrw==",
+      "type": "package",
+      "path": "lucene.net/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/NET35/Lucene.Net.XML",
+        "lib/NET35/Lucene.Net.dll",
+        "lib/NET35/Lucene.Net.pdb",
+        "lib/NET40/Lucene.Net.XML",
+        "lib/NET40/Lucene.Net.dll",
+        "lib/NET40/Lucene.Net.pdb",
+        "lucene.net.3.0.3.nupkg.sha512",
+        "lucene.net.nuspec"
+      ]
+    },
+    "SharpZipLib/0.86.0": {
+      "sha512": "5DbS1SlKLMi+WG00Cm0ueYf2oyXJrowETQk8nx96rmdjTuHsA3laPykGV7Sxi0R5Xxfx0Kh/EfacAZ1f6M7y/g==",
+      "type": "package",
+      "path": "sharpziplib/0.86.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/11/ICSharpCode.SharpZipLib.dll",
+        "lib/20/ICSharpCode.SharpZipLib.dll",
+        "lib/SL3/SharpZipLib.Silverlight3.dll",
+        "lib/SL4/SharpZipLib.Silverlight4.dll",
+        "sharpziplib.0.86.0.nupkg.sha512",
+        "sharpziplib.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": []
+    ".NETCoreApp,Version=v3.0": [
+      "Lucene.Net >= 3.0.3"
+    ]
   },
   "packageFolders": {
-    "/Users/matthewjuel/.nuget/packages/": {}
+    "C:\\Users\\Apprenti6\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
+      "projectUniqueName": "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\Snake.csproj",
       "projectName": "Snake",
-      "projectPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
-      "packagesPath": "/Users/matthewjuel/.nuget/packages/",
-      "outputPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/obj/",
+      "projectPath": "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\Snake.csproj",
+      "packagesPath": "C:\\Users\\Apprenti6\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/matthewjuel/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Apprenti6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -41,6 +100,12 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
+        "dependencies": {
+          "Lucene.Net": {
+            "target": "Package",
+            "version": "[3.0.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -56,8 +121,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Lucene.Net 3.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Lucene.Net",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SharpZipLib 0.86.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SharpZipLib",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.0"
+      ]
+    }
+  ]
 }

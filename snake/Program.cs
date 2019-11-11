@@ -7,7 +7,7 @@ namespace Snake
 
     {
         static int height = 20;
-        static int ms = 200;
+        static int ms = 100;
         static int snakeStartX = 5;
         static int snakeStartY = 5;
         static void Main(string[] args)

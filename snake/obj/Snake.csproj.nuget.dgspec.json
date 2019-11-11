@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj": {}
+    "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\Snake.csproj": {}
   },
   "projects": {
-    "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj": {
+    "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\Snake.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
+        "projectUniqueName": "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\Snake.csproj",
         "projectName": "Snake",
-        "projectPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/Snake.csproj",
-        "packagesPath": "/Users/matthewjuel/.nuget/packages/",
-        "outputPath": "/Users/matthewjuel/Downloads/Snake-master 2/Snake/obj/",
+        "projectPath": "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\Snake.csproj",
+        "packagesPath": "C:\\Users\\Apprenti6\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Apprenti6\\source\\repos\\Snake\\Snake\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/matthewjuel/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Apprenti6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Lucene.Net": {
+              "target": "Package",
+              "version": "[3.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

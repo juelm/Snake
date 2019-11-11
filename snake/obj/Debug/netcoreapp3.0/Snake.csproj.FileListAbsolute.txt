@@ -31,3 +31,17 @@ C:/Users/weiba/Desktop/Snake/Snake/obj/Debug/netcoreapp3.0/Snake.pdb
 /Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.AssemblyInfo.cs
 /Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.dll
 /Users/matthewjuel/Downloads/Snake-master 2/snake/obj/Debug/netcoreapp3.0/Snake.pdb
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.exe
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.deps.json
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.runtimeconfig.json
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.runtimeconfig.dev.json
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.dll
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Snake.pdb
+C:\Users\Apprenti6\source\repos\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.AssemblyInfoInputs.cache
+C:\Users\Apprenti6\source\repos\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.AssemblyInfo.cs
+C:\Users\Apprenti6\source\repos\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.dll
+C:\Users\Apprenti6\source\repos\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.pdb
+C:\Users\Apprenti6\source\repos\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.csprojAssemblyReference.cache
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\Lucene.Net.dll
+C:\Users\Apprenti6\source\repos\Snake\Snake\bin\Debug\netcoreapp3.0\ICSharpCode.SharpZipLib.dll
+C:\Users\Apprenti6\source\repos\Snake\Snake\obj\Debug\netcoreapp3.0\Snake.csproj.CopyComplete
